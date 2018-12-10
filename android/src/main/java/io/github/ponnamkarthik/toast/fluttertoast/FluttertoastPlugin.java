@@ -76,11 +76,13 @@ public class FluttertoastPlugin implements MethodCallHandler {
           shapeDrawable.getPaint().setAntiAlias(true);
           shapeDrawable.getPaint().setFlags(Paint.ANTI_ALIAS_FLAG);
 
-          if (android.os.Build.VERSION.SDK_INT <= 27) {
-              toast.getView().setBackground(shapeDrawable);
-          } else {
-              text.setBackground(shapeDrawable);
-          }
+        
+          toast.getView().setBackgroundDrawable(shapeDrawable);
+          //if (android.os.Build.VERSION.SDK_INT <= 27) {
+          //    toast.getView().setBackground(shapeDrawable);
+          //} else {
+          //    text.setBackground(shapeDrawable);
+          //}
       } catch (Exception e) {
           e.printStackTrace();
       }
